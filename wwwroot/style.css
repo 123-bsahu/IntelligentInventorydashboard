@@ -1,0 +1,245 @@
+﻿/* Monochrome high-contrast theme: pure black (#000) on pure white (#fff). */
+
+html {
+    color-scheme: light;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 8px;
+}
+
+header {
+    border-bottom: 2px solid #000;
+    padding: 4px 0;
+}
+
+.header-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.dashboard-image {
+    height: auto;
+    max-height: 180px;
+    max-width: 100%;
+    object-fit: contain;
+    width: min(307px, 40vw);
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-image {
+        width: 100%;
+    }
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+}
+
+main {
+    display: block;
+}
+
+section {
+    border: 2px solid #000;
+    margin: 8px 0;
+    padding: 8px;
+}
+
+/* Form */
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    max-width: 560px;
+}
+#form-container {
+    transition: all 0.3s ease-in-out;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    flex-basis: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+form input {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    flex: 1 1 160px;
+    padding: 2px 4px;
+}
+
+form input:focus {
+    outline: 3px solid #000;
+    outline-offset: 0;
+}
+
+form button {
+    flex-basis: 100%;
+    margin-top: 4px;
+}
+
+/* Buttons: solid black, inverted on hover, crisp corners */
+
+button {
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 2px 8px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #fff;
+    color: #000;
+}
+
+button:active {
+    outline: 3px solid #000;
+    outline-offset: 0;
+}
+
+/* Data table */
+
+table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    font-size: 13px;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 2px 4px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tbody tr:hover td {
+    background: #f2f2f2;
+}
+
+td .price-update {
+    padding: 0 4px;
+}
+
+/* Status messages */
+
+.message {
+    border-left: 4px solid #000;
+    margin: 8px 0 0 0;
+    max-width: 560px;
+    padding: 2px 4px;
+}
+
+.message.is-error {
+    background: #000;
+    color: #fff;
+}
+
+/* Inventory assistant agent */
+
+#chat-output {
+    border: 2px solid #000;
+    height: 220px;
+    overflow-y: auto; /* scrollable output */
+    padding: 4px;
+}
+
+.chat-controls {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+    max-width: 560px;
+}
+
+.chat-controls input {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    flex: 1 1 auto;
+    font: inherit;
+    padding: 2px 4px;
+}
+
+.chat-controls input:focus {
+    outline: 3px solid #000;
+    outline-offset: 0;
+}
+
+#chat-output .chat-entry {
+    border-bottom: 1px solid #000;
+    margin: 0;
+    padding: 2px 0;
+}
+
+#chat-output .chat-entry.user {
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 4px;
+}
+
+#chat-output .chat-entry.error {
+    background: #000;
+    color: #fff;
+    padding: 2px 4px;
+}
+
+#chat-output .chat-entry.empty {
+    border-left: 4px solid #000;
+    padding: 2px 4px;
+}
+
+#chat-output .chat-entry.result {
+    padding: 2px 0 2px 8px; /* results indented under their summary */
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

@@ -1,0 +1,7 @@
+wwwroot\images\keyloop-logo.avif
+wwwroot\index.html
+wwwroot\js\app.js
+wwwroot\style.css
+C:\Users\BISWOJIT SAHU\source\repos\IntelligentInventorydashboard\IntelligentInventorydashboard\wwwroot\index.html
+C:\Users\BISWOJIT SAHU\source\repos\IntelligentInventorydashboard\IntelligentInventorydashboard\wwwroot\js\app.js
+C:\Users\BISWOJIT SAHU\source\repos\IntelligentInventorydashboard\IntelligentInventorydashboard\wwwroot\style.css

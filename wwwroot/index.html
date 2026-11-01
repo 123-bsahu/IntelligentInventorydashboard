@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intelligent Inventory Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Intelligent Inventory Dashboard</h1>
+            <img class="dashboard-image" src="/images/keyloop-logo.avif" alt="Keyloop logo">
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="form-heading">
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 id="form-heading" style="margin: 0;">Vehicle Submission</h2>
+                <button type="button" id="toggle-form-btn" class="price-update" aria-expanded="true" aria-controls="form-container">Collapse</button>
+            </div>
+            <div id="form-container">
+                <form id="vehicle-form">
+                    <label for="chassisNumber">Chassis Number</label>
+                    <input id="chassisNumber" name="chassisNumber" maxlength="32" required>
+
+                    <label for="make">Make</label>
+                    <input id="make" name="make" maxlength="64" required>
+
+                    <label for="model">Model</label>
+                    <input id="model" name="model" maxlength="64" required>
+
+                    <label for="year">Year</label>
+                    <input id="year" name="year" type="number" min="1900" max="2100" required>
+
+                    <label for="price">Price</label>
+                    <input id="price" name="price" type="number" step="0.01" min="0.01" required>
+
+                    <label for="arrivalDate">Arrival Date</label>
+                    <input id="arrivalDate" name="arrivalDate" type="date" required>
+
+                    <button type="submit">Submit Vehicle</button>
+                </form>
+            </div>
+
+            <p id="form-message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section aria-labelledby="stock-heading">
+            <h2 id="stock-heading">Stock List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chassis Number</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Arrival Date</th>
+                        <th>Days in Stock</th>
+                        <th>Status</th>
+                        <th>Recommendation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-body">
+                    <tr>
+                        <td colspan="10">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="table-message" class="message" role="status" aria-live="polite"></p>
+        </section>
+        <section aria-labelledby="assistant-heading">
+            <h2 id="assistant-heading">Inventory Assistant Agent</h2>
+            <div id="chat-output" tabindex="0" aria-live="polite">
+                <p class="chat-entry agent">Try a search like: "Honda under 30000 with more than 60 days in stock" or just a keyword.</p>
+            </div>
+            <div class="chat-controls">
+                <label for="chat-input" class="visually-hidden">Search vehicles</label>
+                <input id="chat-input" type="text" maxlength="128" autocomplete="off" placeholder="e.g. Honda under 30000, more than 60 days in stock">
+                <button id="chat-send" type="button">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
